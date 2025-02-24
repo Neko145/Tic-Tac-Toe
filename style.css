@@ -1,0 +1,79 @@
+/* Menambahkan latar belakang halaman */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    background-image: url('background_image.png'); /* Ganti dengan nama gambar Anda */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Menambahkan gaya pada papan */
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    margin-bottom: 20px;
+    background-color: rgba(133, 231, 248, 0.8); /* Efek transparan agar gambar tetap terlihat */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Menambahkan gambar ke sel-sel */
+.cell {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #000000;
+    font-size: 2em;
+    cursor: pointer;
+    background-image: url('cell_background.png'); /* Ganti dengan gambar untuk setiap cell */
+    background-size: cover;
+}
+
+/* Mengubah warna tombol reset dan menambahkan gambar */
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+    background-size: contain;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #ff0000;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 600px) {
+    /* Adjust grid template for smaller screens */
+    .game-board {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3px;
+    }
+
+    /* Make cells smaller on smaller screens */
+    .cell {
+        width: 25vw; /* 25% of the viewport width */
+        height: 25vw;
+        font-size: 1.5rem;
+    }
+
+    /* Full-width button */
+    button {
+        width: 100%;
+        font-size: 1.2rem;
+    }
+}
